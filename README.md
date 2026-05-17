@@ -25,7 +25,7 @@
 
 ## Installation
  The easiest way is to just play in your browser<br>
- But you can download the offline app [here](https://github.com/DutchDucksDevelopment/EaglerLauncher/releases)
+ But you can download the offline app [here](https://github.com/EaglerLauncher/EaglerLauncher.github.io/releases)
 
 <hr>
 
