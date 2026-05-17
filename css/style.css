@@ -393,6 +393,34 @@ hr {
     }
 }
 
+#skineditor {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    background-color: var(--ui-main-dark);
+}
+
+#skinsiframe {
+    display: none;
+    width: 83.75vw;
+    height: 85.5vh;
+}
+
+.logoimgdiv {
+    position: absolute;
+    right: 100px;
+    transform: translateY(300px);
+    font-size: 30px;
+    border: 0.2vw solid var(--ui-main-light);
+    padding: 0.1vw 0.1vw;
+    cursor: pointer;
+}
+
+.logoimg {
+    width: 300px;
+}
+
 /* Mods Menu CSS */
 
 #mods {
@@ -906,20 +934,6 @@ hr {
 .copyipbutton:hover {
     border: 0.2vw solid var(--ui-main-lighter);
     background-color: rgba(255, 255, 255, 0.05);
-}
-
-.logoimgdiv {
-	position: absolute;
-    right: 350px;
-    transform: translateY(225px);
-    border: 0.2vw solid var(--ui-main-light);
-    padding: 1vw 1vw;
-    width: max-content;
-}
-
-.logoimg {
-	image-rendering: pixelated;
-    width: 175px;
 }
 
 /* Contributors Screen CSS */

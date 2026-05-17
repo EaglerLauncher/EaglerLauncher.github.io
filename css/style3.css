@@ -393,6 +393,34 @@ hr {
     }
 }
 
+#skineditor {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    background-color: var(--ui-main-dark);
+}
+
+#skinsiframe {
+    display: none;
+    width: 83.75vw;
+    height: 85.5vh;
+}
+
+.logoimgdiv {
+    position: absolute;
+    right: 100px;
+    transform: translateY(300px);
+    font-size: 30px;
+    border: 0.2vw solid var(--ui-main-light);
+    padding: 0.1vw 0.1vw;
+    cursor: pointer;
+}
+
+.logoimg {
+    width: 300px;
+}
+
 /* Mods Menu CSS */
 
 #mods {
