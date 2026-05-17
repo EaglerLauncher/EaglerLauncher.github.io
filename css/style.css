@@ -1069,6 +1069,12 @@ hr {
     margin-bottom: 0.5vw;
 }
 
+#download {
+	position: absolute;
+	transform: translateX(300px);
+	top: 46.5px;
+}
+
 .settingoption p {
     margin-top: 0.1vw;
 }
