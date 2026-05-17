@@ -1,4 +1,18 @@
-[      
+[   
+	{
+        "title": "Site update: New domain",
+        "version": "v1.5.3",
+        "description": "Moved the whole project to a new domain and added a servers screen",
+        "date": "May 17th, 2026",
+        "icon": "sidebar/i-servers.png",
+        "type": "site",
+        "notes": [
+            "Moved the whole repository to EaglerLauncher.github.io",
+            "Added a servers screen, where you can browse servers and copy their ip's",
+            "Made the sik editor its own tab instead of a seperate url",
+            "Removed herobrine"
+        ]
+    },   
 	{
         "title": "Site update: More versions",
         "version": "v1.5.2",
