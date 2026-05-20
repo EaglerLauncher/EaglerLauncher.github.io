@@ -20,6 +20,8 @@ function shuffle(array) {
     }
 }
 
+let gamelink = ".mc/1.12.2"
+
 // Last Played Game Option
 let selectedGame1 = localStorage.getItem("basegame");
 let selectedGame2 = localStorage.getItem("moddedgame");
@@ -73,7 +75,7 @@ function generateprofile(game) {
     if (selectedGame.custom) {document.getElementById('gametitle').innerHTML = selectedGame.title.slice(4)};
     document.getElementById('gameversion').innerHTML = selectedGame.version;
     document.getElementById('gameicon').src = selectedGame.icon;
-    document.getElementById('playbutton').href = selectedGame.link;
+    gamelink = selectedGame.link;
     }
     if (!modslauncher) {
         localStorage.setItem("modslauncher", "");
@@ -132,7 +134,7 @@ function generatelauncheroptions(path, game, gamepath) {
             if (game.custom) {document.getElementById('gametitle').innerHTML = game.title.slice(4)};
             document.getElementById('gameversion').innerHTML = game.version;
             document.getElementById('gameicon').src = game.icon;
-            document.getElementById('playbutton').href = game.link;
+            gamelink = game.link
             if (path === "./assets/json/base.json") {selectedGame1 = JSON.stringify(game); localStorage.setItem("basegame", selectedGame1)};
             if (path === "./assets/json/modded.json") {selectedGame2 = JSON.stringify(game); localStorage.setItem("moddedgame", selectedGame2)};
             if (path === "./assets/json/assisted.json") {selectedGame3 = JSON.stringify(game); localStorage.setItem("assisted", selectedGame3)};
@@ -1004,6 +1006,7 @@ function preventMotion(event)
 // Basic Settings
 const newtabcheckbox = document.getElementById("launchnewtab");
 const presetscheckbox = document.getElementById("launcherpresets");
+let target = ""
 if (localStorage.getItem("launcherpresets")) {
     if (localStorage.getItem("launcherpresets") == 'true') {
         presetscheckbox.checked = true;
@@ -1013,13 +1016,33 @@ if (localStorage.getItem("launcherpresets")) {
     }
     if (localStorage.getItem("launchnewtab") == 'true') {
         newtabcheckbox.checked = true;
-        document.getElementById('playbutton').target = "_blank"};
+        target = "_blank";
+    }
+    if (localStorage.getItem("launchnewtab") == 'false') {
+        newtabcheckbox.checked = false;
+        target = "_self";
+    }
 };
 function launchnewtab() {
-    if (newtabcheckbox.checked) {localStorage.setItem("launchnewtab", true); document.getElementById('playbutton').target = "_blank"; return}
-    else {localStorage.setItem("launchnewtab", false); document.getElementById('playbutton').target = ""};
+	if (newtabcheckbox.checked) {
+		localStorage.setItem("launchnewtab", true)
+		target = "_blank"
+	}
+    else {
+    	localStorage.setItem("launchnewtab", false)
+    	target = "_self"
+    };
 };
 
+function openmc() {
+	const w = window.open(gamelink, target)
+	if (stealthmodebox.checked) {
+		w.addEventListener('load', ()=> {
+			w.document.title = 'Google Documents';
+			w.document.querySelector("link[rel*='icon']").href = '../../assets/images/docs.png';
+		});
+	};
+};
 function presetlaunchers() {
     if (presetscheckbox.checked) {
         localStorage.setItem("launcherpresets", true);
@@ -1055,6 +1078,8 @@ function presetlaunchers() {
 
 function stealthmode() {
   	if (stealthmodebox && stealthmodebox.checked) {
+  		newtabcheckbox.checked = true;
+  		launchnewtab();
     	document.querySelector("link[rel*='icon']").href = './assets/images/docs.png';
     	document.title = "Google Documents";
     	localStorage.setItem("stealth", true)
