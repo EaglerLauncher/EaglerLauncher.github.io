@@ -24,6 +24,9 @@ function shuffle(array) {
 let selectedGame1 = localStorage.getItem("basegame");
 let selectedGame2 = localStorage.getItem("moddedgame");
 let selectedGame3 = localStorage.getItem("assisted");
+const stealth = localStorage.getItem("stealth")
+const stealthmodebox = document.getElementById("stealthmode");
+stealthmodebox.checked = stealth
 let modslauncher
 if (localStorage.getItem("modslauncher")) {
     modslauncher = JSON.parse(localStorage.getItem("modslauncher"))};
@@ -37,7 +40,13 @@ let customlaunchersnumber = localStorage.getItem("customlaunchersnumber").padSta
 if (customlaunchersnumber > 99) {
     console.log("%cWell.. You found an easter egg. You broke the launcher. Sure I can easily fix it. But this is a rare bug. Report if you found this bug, then I will. -IRV77", "color: red; font-weight: bold; background-color: rgba(0,0,0,0.5); padding: 1vw;");
 };
-
+if (stealth) {
+	document.querySelector("link[rel*='icon']").href = './assets/images/docs.png';
+    document.title = "Google Documents";
+} else {
+	document.querySelector("link[rel*='icon']").href = './assets/images/logo.png';
+   	document.title = "Eagler Launcher";
+};
 function generateprofile(game) {
     let selectedGame = "";
     let running = false;
@@ -1041,6 +1050,23 @@ function presetlaunchers() {
         })});
     };
 };
+
+//stealth mode function
+
+function stealthmode() {
+  	if (stealthmodebox && stealthmodebox.checked) {
+    	document.querySelector("link[rel*='icon']").href = './assets/images/docs.png';
+    	document.title = "Google Documents";
+    	localStorage.setItem("stealth", true)
+
+  	} else {
+   		document.querySelector("link[rel*='icon']").href = './assets/images/logo.png';
+   		document.title = "Eagler Launcher";
+   		localStorage.setItem("stealth", false)
+
+  	}
+}
+
 
 // Username Generator
 let username = document.getElementById('username');
