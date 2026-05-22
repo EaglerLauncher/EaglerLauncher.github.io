@@ -22,8 +22,6 @@ function shuffle(array) {
 
 let gamelink = ".mc/1.12.2"
 
-
-
 // Last Played Game Option
 let selectedGame1 = localStorage.getItem("basegame");
 let selectedGame2 = localStorage.getItem("moddedgame");
@@ -32,6 +30,7 @@ let stealthname = localStorage.getItem("stealthname")
 document.getElementById("stealthinput").value = stealthname
 const stealth = localStorage.getItem("stealth")
 const stealthmodebox = document.getElementById("stealthmode");
+stealthmodebox.checked = stealth
 console.log(stealth)
 console.log(stealthmodebox.checked)
 let modslauncher
@@ -49,27 +48,14 @@ if (customlaunchersnumber > 99) {
     console.log("%cWell.. You found an easter egg. You broke the launcher. Sure I can easily fix it. But this is a rare bug. Report if you found this bug, then I will. -IRV77", "color: red; font-weight: bold; background-color: rgba(0,0,0,0.5); padding: 1vw;");
 };
 
-
-async function setstealth() {
-	const url = document.getElementById("stealthinput").value
-	const raw = await fetch("https://fetchtitle.eagerlauncher.workers.dev/?url=" + encodeURIComponent(url))
-	const result = await raw.json();
-	document.querySelector("link[rel*='icon']").href = "https://www.google.com/s2/favicons?domain=" + encodeURIComponent(url) + "&sz=128";
-	document.title = result.title
-	console.log(raw)
-	console.log(result)
-	localStorage.setItem("stealthname", url);
-    stealthname = localStorage.getItem("stealthname");
-    launchnewtab()
-    stealthmode();
-}
-
-if (stealthmodebox.checked) {
+if (stealth) {
 	document.getElementById("stealthinput").style.display = "flex";
 	localStorage.setItem("launchnewtab", true);
 	document.getElementById('launchnewtab').checked = true;
 	document.getElementById('launchnewtab').disabled = true;
-	setstealth()
+
+	document.querySelector("link[rel*='icon']").href = './assets/images/docs.png';
+    document.title = stealthname;
 } else {
 	document.querySelector("link[rel*='icon']").href = './assets/images/logo.png';
    	document.title = "Eagler Launcher";
@@ -1066,8 +1052,8 @@ function openmc() {
 	const w = window.open(gamelink, target)
 	if (stealthmodebox.checked) {
 		w.addEventListener('load', ()=> {
-			w.document.title = document.title;
-			w.document.querySelector("link[rel*='icon']").href = document.querySelector("link[rel*='icon']").href;
+			w.document.title = stealthname;
+			w.document.querySelector("link[rel*='icon']").href = '../../assets/images/docs.png';
 		});
 	};
 };
@@ -1107,9 +1093,11 @@ function presetlaunchers() {
 function stealthmode() {
   	if (stealthmodebox && stealthmodebox.checked) {
   		newtabcheckbox.checked = true;
+  		launchnewtab();
   		document.getElementById("stealthinput").style.display = "flex";
   		document.getElementById('launchnewtab').disabled = true;
-		setstealth()
+    	document.querySelector("link[rel*='icon']").href = './assets/images/docs.png';
+    	document.title = stealthname
     	localStorage.setItem("stealth", true)
 
   	} else {
@@ -1125,7 +1113,7 @@ function stealthmode() {
 function stealthnamechange() {
     localStorage.setItem("stealthname", document.getElementById("stealthinput").value);
     stealthname = localStorage.getItem("stealthname");
-    stealthmode()
+    stealthmode();
 };
 
 // Username Generator
