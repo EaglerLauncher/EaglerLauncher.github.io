@@ -61,7 +61,6 @@ async function setstealth() {
 	localStorage.setItem("stealthname", url);
     stealthname = localStorage.getItem("stealthname");
     launchnewtab()
-    stealthmode();
 }
 
 if (stealthmodebox.checked) {
@@ -1125,7 +1124,7 @@ function stealthmode() {
 function stealthnamechange() {
     localStorage.setItem("stealthname", document.getElementById("stealthinput").value);
     stealthname = localStorage.getItem("stealthname");
-    stealthmode()
+    stealthmode();
 };
 
 // Username Generator
