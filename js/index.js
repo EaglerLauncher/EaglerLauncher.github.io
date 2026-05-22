@@ -29,7 +29,12 @@ let selectedGame1 = localStorage.getItem("basegame");
 let selectedGame2 = localStorage.getItem("moddedgame");
 let selectedGame3 = localStorage.getItem("assisted");
 let stealthname = localStorage.getItem("stealthname")
-document.getElementById("stealthinput").value = stealthname
+if (!stealthname == "") {
+	document.getElementById("stealthinput").value = stealthname
+}
+else {
+	document.getElementById("stealthinput").value = "https://docs.google.com"
+};
 const stealth = localStorage.getItem("stealth")
 const stealthmodebox = document.getElementById("stealthmode");
 console.log(stealth)
