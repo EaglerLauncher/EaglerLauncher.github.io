@@ -1,27 +1,48 @@
-[
+[    
+		{
+       "title": "Latest release WASM",
+       "version": "26.2-beta-wasm",
+       "icon": "./assets/images/mc-icons/sulfur-cube-wasm.png",
+       "link": "./mc/26.2-wasm/",
+       "active": true
+    },
     {
-       "title": "Latest release",
+       "title": "Previous release WASM",
+       "version": "1.20.6-pre-wasm",
+       "icon": "./assets/images/icons/eaglymc-wasm.png",
+       "link": "./mc/1.20.6-wasm/",
+       "active": true
+    },
+    {
+       "title": "Eaglercraft 1.14.4 WASM",
+       "version": "1.14.4-u1-wasm",
+       "icon": "./assets/images/mc-icons/grass.png",
+       "link": "./mc/1.14.4-wasm/",
+       "active": true
+    },
+    {
+       "title": "Eaglercraft 1.12.2",
        "version": "1.12.2-u2",
        "icon": "./assets/images/mc-icons/grass.png",
        "link": "./mc/1.12.2/",
        "active": true
     },
     {
-       "title": "Latest release WASM",
+       "title": "Eaglercraft 1.12.2 WASM",
        "version": "1.12.2-u2-wasm",
        "icon": "./assets/images/mc-icons/grass-wasm.png",
        "link": "./mc/1.12.2-wasm/",
        "active": true
     },
     {
-       "title": "Previous release",
+       "title": "Eaglercraft 1.8.8",
        "version": "1.8.8-u53",
        "icon": "./assets/images/mc-icons/dirt.png",
        "link": "./mc/1.8.8/",
        "active": true
     },
     {
-       "title": "Previous release WASM",
+       "title": "Eaglercraft 1.8.8 WASM",
        "version": "1.8.8-u53-wasm",
        "icon": "./assets/images/mc-icons/dirt-wasm.png",
        "link": "./mc/1.8.8-wasm/",
@@ -35,7 +56,7 @@
        "active": false
     },
     {
-       "title": "Older release",
+       "title": "Eaglercraft 1.5.2",
        "version": "1.5.2-sp2.01",
        "icon": "./assets/images/mc-icons/hopper.png",
        "link": "./mc/1.5.2/",
