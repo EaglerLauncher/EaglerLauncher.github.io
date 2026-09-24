@@ -20,7 +20,7 @@ function shuffle(array) {
     }
 }
 
-let gamelink = ".mc/1.12.2"
+let gamelink = ".mc/26.2-wasm"
 
 
 
@@ -639,6 +639,7 @@ function generatenotes() {
         });
         if (gamenote == false) { document.querySelectorAll('[data-note-type="game"]').forEach(element => {element.style.display = 'none'})};
         if (sitenote == false) { document.querySelectorAll('[data-note-type="site"]').forEach(element => {element.style.display = 'none'})};
+        if (hotfixnote == false) { document.querySelectorAll('[data-note-type="hotfix"]').forEach(element => {element.style.display = 'none'})};
     });
 };
 const servers = document.getElementById("serversbox");
@@ -755,17 +756,24 @@ function generaterecentnote() {
 
 // Patchnote Functions
 
-let gamenote = sitenote = true;
+let gamenote = true
+let sitenote = true
+let hotfixnote = true
 function sortnote(type) {
     if (type === "site") {
-        if (gamenote == true) { document.querySelectorAll('[data-note-type="game"]').forEach(element => {element.style.display = 'none';}); gamenote = false;}
-        else if (gamenote == false) { document.querySelectorAll('[data-note-type="game"]').forEach(element => {element.style.display = 'flex';}); gamenote = true;}
+        if (sitenote == true) { document.querySelectorAll('[data-note-type="site"]').forEach(element => {element.style.display = 'none';}); sitenote = false;}
+        else if (sitenote == false) { document.querySelectorAll('[data-note-type="site"]').forEach(element => {element.style.display = 'flex';}); sitenote = true;}
     };
     if (type === "game") {
-        if (sitenote == true) { document.querySelectorAll('[data-note-type="site"]').forEach(element => {element.style.display = 'none';}); sitenote = false; }
-        else if (sitenote == false) { document.querySelectorAll('[data-note-type="site"]').forEach(element => {element.style.display = 'flex';}); sitenote = true; }
+        if (gamenote == true) { document.querySelectorAll('[data-note-type="game"]').forEach(element => {element.style.display = 'none';}); gamenote = false; }
+        else if (gamenote == false) { document.querySelectorAll('[data-note-type="game"]').forEach(element => {element.style.display = 'flex';}); gamenote = true; }
+    };
+    if (type === "hotfix") {
+        if (hotfixnote == true) { document.querySelectorAll('[data-note-type="hotfix"]').forEach(element => {element.style.display = 'none';}); hotfixnote = false; }
+        else if (hotfixnote == false) { document.querySelectorAll('[data-note-type="hotfix"]').forEach(element => {element.style.display = 'flex';}); hotfixnote = true; }
     };
 }
+
 
 let onepointeight = onepointtwelve = other = true;
 function sortserver(type) {

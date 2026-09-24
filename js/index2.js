@@ -20,7 +20,7 @@ function shuffle(array) {
     }
 }
 
-let gamelink = ".mc/1.12.2"
+let gamelink = ".mc/26.2-wasm"
 
 // Last Played Game Option
 let selectedGame1 = localStorage.getItem("basegame");

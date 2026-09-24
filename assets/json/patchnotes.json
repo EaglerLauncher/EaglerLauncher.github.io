@@ -1,4 +1,17 @@
-[   
+[  
+	{
+        "title": "Hotfix: New versions",
+        "version": "v1.5.31",
+        "description": "Added 3 new versions of Eaglercraft",
+        "date": "Septemper 24th, 2026",
+        "icon": "/mc-icons/sulfur_cube.webp",
+        "type": "hotfix",
+        "notes": [
+            "Added the 26.2, 1.20.6 and 1.14.4 ports of Eaglercraft to the launcher",
+            "Added a new type of patch note: hotfix (which this is one of!)",
+            "Removed herobrine"
+        ]
+  }, 
 	{
         "title": "Site update: New domain",
         "version": "v1.5.3",

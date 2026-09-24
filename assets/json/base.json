@@ -18,7 +18,7 @@
        "version": "1.14.4-u1-wasm",
        "icon": "./assets/images/mc-icons/pillager-head-wasm.png",
        "link": "./mc/1.14.4-wasm/",
-       "active": true
+       "active": false
     },
     {
        "title": "Eaglercraft 1.12.2",
