@@ -9,6 +9,7 @@
         "notes": [
             "Added the 26.2, 1.20.6 and 1.14.4 ports of Eaglercraft to the launcher",
             "Added a new type of patch note: hotfix (which this is one of!)",
+            "Updated the background",
             "Removed herobrine"
         ]
   }, 
@@ -41,6 +42,15 @@
             "Removed herobrine"
         ]
    },
+   {
+        "title": "Eaglercraft 26.2",
+        "version": "26.2-0.1-dev",
+        "description": "The 26.2 port of Eaglercraft is created by o_xer",
+        "date": "may 14th, 2026",
+        "icon": "/icons/eaglercraft.png",
+        "type": "game",
+        "notes": []
+   }, 
    {
         "title": "Site update: Customizable",
         "version": "v1.5.1",
